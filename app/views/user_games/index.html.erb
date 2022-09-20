@@ -103,7 +103,7 @@
 
 setListener();
 
-var word = "PENIS"
+var word = "SHITS"
 var current_array = []
 var click_arr = []
 var click = -1
@@ -165,9 +165,9 @@ function switch_rows(){
 function submit(){
   changeColor();
   console.log(current_array);
-  
+
   if (current_array.join("").toLowerCase() === word.toLowerCase()){
-    alert("winner winner chicky dinner")
+      alert("WINNER WINNER CHICKY DINNER")
   } 
   if (current_array.length === 5) {
     full_game_array.push(current_array)
@@ -178,8 +178,9 @@ function submit(){
   click_arr = [];
 };
 
+
 function removeLast(){
-  click_acurrent_arrayr.pop();
+  click_arr.pop();
   current_array.pop();
   console.log(current_array);
   console.log(click_arr);
