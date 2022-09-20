@@ -116,9 +116,7 @@ function setListener() {
   var elements = document.getElementsByClassName("key");
   var myFunction = function() {
       var attribute = this.getAttribute("data-key");
-      // document.getElementsByClassName("grid-item").innerHTML = setLetter(attribute)
       if( attribute.length < 2){
-        console.log( "letter: " + attribute)
         document.getElementsByClassName(word_rows[rows_index]).innerHTML = setLetter(attribute)
       }
   };
@@ -132,14 +130,10 @@ function setListener() {
 function setLetter(letter) {
   if (letter != "enter" && letter != "del"){
     current_array.push(letter)
-    console.log( "letter array: " + current_array );
     click++ 
     var squares = document.getElementsByClassName(word_rows[rows_index])
-    console.log("click: " + click);
-    console.log("row: " + word_rows[rows_index]);
     squares[click].innerHTML = letter
     click_arr.push(click)
-    console.log("click arr: " + click_arr);
   } 
 }
 
@@ -147,7 +141,6 @@ function changeColor(){
   var sq = document.getElementsByClassName(word_rows[rows_index])
   for(var i = 0; i < current_array.length; i++){
     if (current_array[i] === word[i]){
-      console.log("same @ postition " + i);
       sq[i].style.backgroundColor = "#538d4e"
     } else if (word.includes(current_array[i]) && current_array[i] != word[i]) {
       sq[i].style.backgroundColor = "#b59f3b"
@@ -158,25 +151,29 @@ function changeColor(){
 function switch_rows(){
   rows_index++
   full_game_array.push(current_array)
-  console.log("full game array: " + full_game_array);
-  console.log("word rows: " + word_rows[rows_index]);
 }
 
 function submit(){
   changeColor();
-  console.log(current_array);
-
   if (current_array.join("").toLowerCase() === word.toLowerCase()){
-      alert("WINNER WINNER CHICKY DINNER")
-  } 
+      alert_message();
+  }
+
   if (current_array.length === 5) {
     full_game_array.push(current_array)
     current_array = []
   }
+
   switch_rows();
   click = -1;
   click_arr = [];
 };
+
+function alert_message(){
+  setTimeout(() => {
+    alert("WINNER WINNER CHICKY DINNER!!!!")
+  }, 500);
+}
 
 
 function removeLast(){
