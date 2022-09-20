@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* GRID */
+ @media only screen and (max-width: 600px) {
+
+   .grid-container {
+    display: grid;
+    grid-template:  repeat(6, 1fr);
+    background-color: #121214;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 0;
+    min-width: 0;
+    
+  }
+  .grid-item {
+    background-color: #121214;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #3a3a3b;
+    /* padding: 10px; */
+    font-size: 30px;
+    overflow: hidden;
+    min-width: 0;
+    height: 20px;
+    width: 20px;
+   
+  }
+  .word-one, .word-two, .word-three, .word-four, .word-five, .word-six{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+   
+  }
+ }
+
+ /* DESKTOP */
+ html {
+
+ }
+ body {
+   height: 100vh;
+ }
+
+ .grid-container {
+  display: grid;
+  grid-template:  repeat(6, 1fr);
+  background-color: #121214;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: -5px;
+  min-height: 0;
+  min-width: 0;
+  
+}
+.grid-item {
+  background-color: #121214;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  justify-content: center;
+  border: 2px solid #3a3a3b;
+  padding: 7px;
+  font-size: 30px;
+  overflow: hidden;
+  min-width: 0;
+  height: 42px;
+  width: 43px;
+ 
+}
+.word-one, .word-two, .word-three, .word-four, .word-five, .word-six{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  grid-template-columns: repeat(5,1fr);
+  column-gap: 10px;
+  margin: 4px;
+  padding: 5px;
+}
+
+
+body {
+  background-color: #121214;
+}
+.title {
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+
+/* KEYBOARD */
+#keyboard-container {
+  height: var(--keyboard-height);
+  margin: 0 8px;
+  color: white;
+  /* The text of the element and its sub-elements is not selectable
+  user can only press the keyboard element */
+  user-select: none;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.keyboard-row button {
+  font-family: inherit;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--key-bg);
+  color: var(--key-text-color);
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  box-sizing: border-box;
+}
+.keyboard-row button:hover {
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+}
+
+.keyboard-row button:last-of-type {
+  margin: 0;
+}
+
+.keyboard-row .spacer-half {
+  flex-grow: 0.5;
+}
+.keyboard-row .wide-button {
+  flex-grow: 1.5;
+  font-size: 12px;
+}

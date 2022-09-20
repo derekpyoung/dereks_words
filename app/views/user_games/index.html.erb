@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <h1 class="title">DEREKS WORDS</h1>
+
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <div class="word-one ">
+      <div class="grid-item one"></div>
+      <div class="grid-item one"></div>
+      <div class="grid-item one"></div>
+      <div class="grid-item one"></div>
+      <div class="grid-item one"></div>
+    </div>
+    <div class="word-two ">
+      <div class="grid-item two"></div>
+      <div class="grid-item two"></div>
+      <div class="grid-item two"></div>
+      <div class="grid-item two"></div>
+      <div class="grid-item two"></div>
+    </div>
+    <div class="word-three">
+      <div class="grid-item three"></div>
+      <div class="grid-item three"></div>
+      <div class="grid-item three"></div>
+      <div class="grid-item three"></div>
+      <div class="grid-item three"></div>
+    </div>
+    <div class="word-four">
+      <div class="grid-item four"></div>
+      <div class="grid-item four"></div>
+      <div class="grid-item four"></div>
+      <div class="grid-item four"></div>
+      <div class="grid-item four"></div>
+    </div>
+    <div class="word-five">
+      <div class="grid-item five"></div>
+      <div class="grid-item five"></div>
+      <div class="grid-item five"></div>
+      <div class="grid-item five"></div>
+      <div class="grid-item five"></div>
+    </div>
+    <div class="word-six">
+      <div class="grid-item six" ></div>
+      <div class="grid-item six" ></div>
+      <div class="grid-item six" ></div>
+      <div class="grid-item six" ></div>
+      <div class="grid-item six" ></div>
+    </div>
+  </div>
+
+  <div id="keyboard-container">
+    <div class="keyboard-row">
+      <button class="key" data-key="Q">Q</button>
+      <button class="key" data-key="W">W</button>
+      <button class="key" data-key="E">E</button>
+      <button class="key" data-key="R">R</button>
+      <button class="key" data-key="T">T</button>
+      <button class="key" data-key="Y">Y</button>
+      <button class="key" data-key="U">U</button>
+      <button class="key" data-key="I">I</button>
+      <button class="key" data-key="O">O</button>
+      <button class="key" data-key="P">P</button>
+    </div>
+    <div class="keyboard-row">
+      <div class="spacer-half"></div>
+      <button class="key" data-key="A">A</button>
+      <button class="key" data-key="S">S</button>
+      <button class="key" data-key="D">D</button>
+      <button class="key" data-key="F">F</button>
+      <button class="key" data-key="G">G</button>
+      <button class="key" data-key="H">H</button>
+      <button class="key" data-key="J">J</button>
+      <button class="key" data-key="K">K</button>
+      <button class="key" data-key="L">L</button>
+      <div class="spacer-half"></div>
+    </div>
+    <div class="keyboard-row">
+      <button class="key" data-key="enter" onclick="submit()"class="wide-button">Enter</button>
+      <button class="key" data-key="Z">Z</button>
+      <button class="key" data-key="X">X</button>
+      <button class="key" data-key="C">C</button>
+      <button class="key" data-key="V">V</button>
+      <button class="key" data-key="B">B</button>
+      <button class="key" data-key="N">N</button>
+      <button class="key" data-key="M">M</button>
+      <button class="key" data-key="del" class="wide-button" onclick="removeLast()">&larr;</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script>
+
+setListener();
+
+var word = "PENIS"
+var current_array = []
+var click_arr = []
+var click = -1
+var full_game_array = []
+var word_rows = ["one", "two", "three", "four", "five", "six"]
+var rows_index = 0;
+
+
+function setListener() {
+  var elements = document.getElementsByClassName("key");
+  var myFunction = function() {
+      var attribute = this.getAttribute("data-key");
+      // document.getElementsByClassName("grid-item").innerHTML = setLetter(attribute)
+      if( attribute.length < 2){
+        console.log( "letter: " + attribute)
+        document.getElementsByClassName(word_rows[rows_index]).innerHTML = setLetter(attribute)
+      }
+  };
+  for (var i = 0; i < elements.length ; i++) {
+      elements[i].addEventListener('click', myFunction);
+  }
+}
+
+
+
+function setLetter(letter) {
+  if (letter != "enter" && letter != "del"){
+    current_array.push(letter)
+    console.log( "letter array: " + current_array );
+    click++ 
+    var squares = document.getElementsByClassName(word_rows[rows_index])
+    console.log("click: " + click);
+    console.log("row: " + word_rows[rows_index]);
+    squares[click].innerHTML = letter
+    click_arr.push(click)
+    console.log("click arr: " + click_arr);
+  } 
+}
+
+function changeColor(){
+  var sq = document.getElementsByClassName(word_rows[rows_index])
+  for(var i = 0; i < current_array.length; i++){
+    if (current_array[i] === word[i]){
+      console.log("same @ postition " + i);
+      sq[i].style.backgroundColor = "#538d4e"
+    } else if (word.includes(current_array[i]) && current_array[i] != word[i]) {
+      sq[i].style.backgroundColor = "#b59f3b"
+    }
+  }
+}
+
+function switch_rows(){
+  rows_index++
+  full_game_array.push(current_array)
+  console.log("full game array: " + full_game_array);
+  console.log("word rows: " + word_rows[rows_index]);
+}
+
+function submit(){
+  changeColor();
+  console.log(current_array);
+  
+  if (current_array.join("").toLowerCase() === word.toLowerCase()){
+    alert("winner winner chicky dinner")
+  } 
+  if (current_array.length === 5) {
+    full_game_array.push(current_array)
+    current_array = []
+  }
+  switch_rows();
+  click = -1;
+  click_arr = [];
+};
+
+function removeLast(){
+  click_acurrent_arrayr.pop();
+  current_array.pop();
+  console.log(current_array);
+  console.log(click_arr);
+  var squares = document.getElementsByClassName(word_rows[rows_index])
+  squares[click].innerHTML = ""
+  click--
+}
+
+
+</script>
