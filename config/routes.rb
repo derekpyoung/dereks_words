@@ -9,6 +9,6 @@ get '/users/:id', to: 'users#show'
 get '/users/:id', to: 'users#destroy'
 patch '/users/:id', to: 'users#update'
 
-get '/user_games', to: 'user_games#index'
+get '/', to: 'user_games#index'
   
 end
