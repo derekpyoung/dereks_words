@@ -92,6 +92,30 @@
   margin: 4px;
   padding: 5px;
 }
+.found {
+  background-color: #b59f3b !important;
+  -webkit-transition: background 1.5s;
+-moz-transition: background 1.5s;
+-ms-transition: background 1.5s;
+-o-transition: background 1.5s;
+transition: background 1.5s;
+}
+.correct {
+  background-color: #538d4e !important;
+  -webkit-transition: background 1.5s;
+-moz-transition: background 1.5s;
+-ms-transition: background 1.5s;
+-o-transition: background 1.5s;
+transition: background 1.5s;
+}
+.not_found {
+  background-color: #3a3a3b !important ;
+  -webkit-transition: background 1.5s;
+-moz-transition: background 1.5s;
+-ms-transition: background 1.5s;
+-o-transition: background 1.5s;
+transition: background 1.5s;
+}
 
 
 body {
