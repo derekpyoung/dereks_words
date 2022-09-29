@@ -2697,22 +2697,30 @@ function submit(){
   changeKeyboard(current_array)
  
   if (current_array.join("").toLowerCase() === word.toLowerCase()){
-    alert_message();
+    alert_message_win();
   }
 
   if (current_array.length === 5){
     full_game_array.push(current_array)
     current_array = []
   }
-
+  if ((current_array.join("").toLowerCase() !== word.toLowerCase()) && (full_game_array.length === 11)) {
+    alert_message_loss();
+  }
   switch_rows();
   click = -1;
   click_arr = [];
 }
 
-function alert_message(){
+function alert_message_win(){
   setTimeout(() => {
     alert("WINNER WINNER CHICKY DINNER!!!!")
+  }, 1000);
+}
+
+function alert_message_loss(){
+  setTimeout(() => {
+    alert("Maybe next time... The word was " + word)
   }, 1000);
 }
 
