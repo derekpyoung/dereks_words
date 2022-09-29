@@ -2634,6 +2634,9 @@ function setListener() {
       elements[i].addEventListener('click', myFunction);
   }
 }
+addEventListener("load", function() {
+    window.scrollTo(1, 0);
+}, false);
 
 function changeKeyboard(arr) {
   var buttons = document.getElementsByClassName("key");
@@ -2734,4 +2737,5 @@ function removeLast(){
   click--
 }
 setListener();
+addEventListener();
 </script>
