@@ -131,6 +131,9 @@ body {
   padding: 0;
   text-align: center;
 }
+.hidden {
+  color: #121214;
+}
 
 
 
