@@ -120,6 +120,9 @@ transition: background 1.5s;
 
 body {
   background-color: #121214;
+  max-width: 800px;
+  display: block;
+  margin: auto;
 }
 .title {
   color: white;
