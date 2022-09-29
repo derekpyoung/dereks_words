@@ -1,34 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+* Ruby version 3.0.3
 
-* Database creation
+* Rails 7.0.4
 
-* Database initialization
+* PostgreSQL
 
-* How to run the test suite
+* Javascript
 
-* Services (job queues, cache servers, search engines, etc.)
+* HTML/CSS
 
-* Deployment instructions
 
-* ...
+
+
 # dereks_words
 
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="/Users/derekyoung/Desktop/bob_projects/dereks_words/app/assets/images/Screen Shot 2022-09-29 at 10.58.43 AM.png" alt="Markdownify" width="200"></a>
-  <br>
-  Markdownify
+
+
   <br>
 </h1>
 
