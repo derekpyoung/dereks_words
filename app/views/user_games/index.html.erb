@@ -2604,8 +2604,8 @@ const game_words = [
   "yummy",
   "zones",
   ]
-var min = 1;
-var max = 468;
+var min = 0;
+var max = 2500;
 var random = Math.floor(Math.random() * (max - min) + min) 
 var word_lower = game_words[random];
 var word = word_lower.toUpperCase();
@@ -2620,8 +2620,8 @@ var rows_index = 0;
 
 
 function setListener() {
+  console.log(word);
   var elements = document.getElementsByClassName("key");
-    console.log(word);
   var myFunction = function() {
       var attribute = this.getAttribute("data-key");
       if( attribute.length < 2){
@@ -2633,9 +2633,7 @@ function setListener() {
   for (var i = 0; i < elements.length ; i++) {
       elements[i].addEventListener('click', myFunction);
   }
-  
 }
-
 
 function changeKeyboard(arr) {
   var buttons = document.getElementsByClassName("key");
@@ -2662,7 +2660,6 @@ function changeKeyboard(arr) {
   }
 }
 
-
 function setLetter(letter) {
   if (letter != "enter" && letter != "del"){
     current_array.push(letter)
@@ -2676,9 +2673,8 @@ function setLetter(letter) {
 function changeColor(){
   var sq = document.getElementsByClassName(word_rows[rows_index])
   var correct_class = document.getElementsByClassName("correct")
-  
-
   var keys = document.getElementsByClassName("key")
+
   for(var i = 0; i < current_array.length; i++){
     if (current_array[i] === word[i]){
       sq[i].classList.add("correct")
@@ -2702,9 +2698,6 @@ function submit(){
  
   if (current_array.join("").toLowerCase() === word.toLowerCase()){
     alert_message();
-     
-    
-
   }
 
   if (current_array.length === 5){
@@ -2722,7 +2715,6 @@ function alert_message(){
     alert("WINNER WINNER CHICKY DINNER!!!!")
   }, 1000);
 }
-
 
 function removeLast(){
   click_arr.pop();
