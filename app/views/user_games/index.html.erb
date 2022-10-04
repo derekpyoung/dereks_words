@@ -2634,7 +2634,7 @@ var rows_index = 0;
 
 
 function set_listeners() {
-  console.log(word);
+  // console.log(word);
   var elements = document.getElementsByClassName("key");
   var myFunction = function() {
       var attribute = this.getAttribute("data-key");
@@ -2712,20 +2712,14 @@ function check_url(url){
     http.open('HEAD', url, false);
     http.send();
     if (http.status != 404){
-      console.log("its a word");
       return true 
     } else {
-      console.log("def not a word");
       return false 
     }
 }
 
 function not_word() {
-  current_array = [];
-  word_rows.innerHTML = ""
   alert("Sorry Not a Word")
-  
-
 }
   
   
@@ -2736,7 +2730,7 @@ function submit(){
     change_color();
     change_keyboard(current_array);
 
-    if (current_array.join("").toLowerCase() === word.toLowerCase()){
+    if (current_array.join("").toLowerCase() === word.      toLowerCase()){
       alert_message_win();
     }
 
@@ -2752,9 +2746,7 @@ function submit(){
     click_arr = [];
     } else {
     not_word();
-    
   }
- 
 }
 
 function alert_message_win(){
