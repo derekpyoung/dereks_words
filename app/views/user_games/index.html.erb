@@ -2632,13 +2632,14 @@ var rows_index = 0;
 
 
 
-function setListener() {
+
+function set_listeners() {
   console.log(word);
   var elements = document.getElementsByClassName("key");
   var myFunction = function() {
       var attribute = this.getAttribute("data-key");
       if( attribute.length < 2){
-        document.getElementsByClassName(word_rows[rows_index]).innerHTML = setLetter(attribute)
+        document.getElementsByClassName(word_rows[rows_index]).innerHTML = set_letter(attribute)
         keyboard_color_change.push(attribute)
         
       }
@@ -2647,11 +2648,9 @@ function setListener() {
       elements[i].addEventListener('click', myFunction);
   }
 }
-// addEventListener("load", function() {
-//     window.scrollTo(1, 0);
-// }, false);
 
-function changeKeyboard(arr) {
+
+function change_keyboard(arr) {
   var buttons = document.getElementsByClassName("key");
   for (var i = 0; i < arr.length; i++){
     var key_square = document.getElementById(arr[i])
@@ -2661,22 +2660,19 @@ function changeKeyboard(arr) {
       if (key_square_class_list.contains("found")) {
         key_square.classList.remove("found")
         key_square.classList.add("correct")
-        console.log("correct");
       } else {
         key_square.classList.add("correct")
       }
 
     } else if (word.includes(arr[i]) && (arr[i] !== word[i] )){
       key_square.classList.add("found")
-      console.log(  "found");
     } else {
       key_square.classList.add("not_found")
-      console.log(  " not found");
     }
   }
 }
 
-function setLetter(letter) {
+function set_letter(letter) {
   if (letter != "enter" && letter != "del"){
     current_array.push(letter)
     click++ 
@@ -2686,7 +2682,7 @@ function setLetter(letter) {
   } 
 }
 
-function changeColor(){
+function change_color(){
   var sq = document.getElementsByClassName(word_rows[rows_index])
   var correct_class = document.getElementsByClassName("correct")
   var keys = document.getElementsByClassName("key")
@@ -2708,24 +2704,57 @@ function switch_rows(){
   full_game_array.push(current_array)
 }
 
-function submit(){
-  changeColor();
-  changeKeyboard(current_array)
- 
-  if (current_array.join("").toLowerCase() === word.toLowerCase()){
-    alert_message_win();
-  }
 
-  if (current_array.length === 5){
-    full_game_array.push(current_array)
-    current_array = []
+function check_url(url){
+  var url = ("https://api.dictionaryapi.dev/api/v2/entries/en/" + current_array.join(""))
+    
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    if (http.status != 404){
+      console.log("its a word");
+      return true 
+    } else {
+      console.log("def not a word");
+      return false 
+    }
+}
+
+function not_word() {
+  current_array = [];
+  word_rows.innerHTML = ""
+  alert("Sorry Not a Word")
+  
+
+}
+  
+  
+
+
+function submit(){
+  if(check_url(current_array)){
+    change_color();
+    change_keyboard(current_array);
+
+    if (current_array.join("").toLowerCase() === word.toLowerCase()){
+      alert_message_win();
+    }
+
+    if (current_array.length === 5){
+      full_game_array.push(current_array)
+      current_array = []
+    }
+    if ((current_array.join("").toLowerCase() !== word.toLowerCase()) && (full_game_array.length === 11)) {
+      alert_message_loss();
+    }
+    switch_rows();
+    click = -1;
+    click_arr = [];
+    } else {
+    not_word();
+    
   }
-  if ((current_array.join("").toLowerCase() !== word.toLowerCase()) && (full_game_array.length === 11)) {
-    alert_message_loss();
-  }
-  switch_rows();
-  click = -1;
-  click_arr = [];
+ 
 }
 
 function alert_message_win(){
@@ -2743,12 +2772,10 @@ function alert_message_loss(){
 function removeLast(){
   click_arr.pop();
   current_array.pop();
-  console.log(current_array);
-  console.log(click_arr);
   var squares = document.getElementsByClassName(word_rows[rows_index])
   squares[click].innerHTML = ""
   click--
 }
-setListener();
+set_listeners();
 
 </script>

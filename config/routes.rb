@@ -10,5 +10,10 @@ get '/users/:id', to: 'users#destroy'
 patch '/users/:id', to: 'users#update'
 
 get '/', to: 'user_games#index'
+get '/check_word', to: 'check_word#check_word'
   
 end
+
+
+
+

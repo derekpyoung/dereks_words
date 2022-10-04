@@ -1,5 +1,13 @@
 class UserGamesController < ApplicationController
-  def index 
+
+ 
+  def index
     u = UserGame.all
   end 
+
+
+
+
+
+ 
 end 

@@ -1,0 +1,7 @@
+###
+get https://wordsapiv1.p.rapidapi.com/words/%7Bword%7D
+Content-Type: application/json 
+
+{
+  "word": "break"
+}
