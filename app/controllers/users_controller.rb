@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     u.save 
-    redirect_to "/users"  
+    redirect_to "/"  
   end 
 
   def index
