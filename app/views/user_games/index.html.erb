@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <h1 class="title">DEREKS WORDS</h1>
+  <title>WORDS</title>
+  <h1 class="title"><%= current_user.name.capitalize %>'s Wordle</h1>
 
 </head>
 
 <body>
+
 
   <div class="grid-container">
     <div class="word-one ">
@@ -106,8 +107,7 @@
   <br>
   <br>
   <br>
-    
-<h3 class="hidden">Balls<h3>
+  
 
 </body>
 
@@ -2629,12 +2629,12 @@ var full_game_array = []
 var keyboard_color_change = []
 var word_rows = ["one", "two", "three", "four", "five", "six"]
 var rows_index = 0;
+var attempts = full_game_array.length 
 
 
 
 
 function set_listeners() {
-  // console.log(word);
   var elements = document.getElementsByClassName("key");
   var myFunction = function() {
       var attribute = this.getAttribute("data-key");
@@ -2701,13 +2701,11 @@ function change_color(){
 
 function switch_rows(){
   rows_index++
-  full_game_array.push(current_array)
 }
 
 
 function check_url(url){
   var url = ("https://api.dictionaryapi.dev/api/v2/entries/en/" + current_array.join(""))
-    
     var http = new XMLHttpRequest();
     http.open('HEAD', url, false);
     http.send();
@@ -2722,25 +2720,51 @@ function not_word() {
   alert("Sorry Not a Word")
 }
   
-  
+function submit( ){
+  console.log(word);
+  let tries = full_game_array.length + 1
 
-
-function submit(){
   if(check_url(current_array)){
     change_color();
     change_keyboard(current_array);
 
-    if (current_array.join("").toLowerCase() === word.      toLowerCase()){
+    if (current_array.join("").toLowerCase() === word.toLowerCase()){
       alert_message_win();
+      var score =  parseInt(tries) * parseInt(-10) + (parseInt(100)) 
+      var send_to_controller = {"attempts": tries, "win": true, "score": score}; 
+    
+    
+       fetch("/"  + "?attempts=" + tries + "&win=" + true + "&word=" + word + "&score=" + score, {
+        method: "post",
+        headers: {
+          'Content-Type': 'text/html'
+        },
+        data: {data: send_to_controller}
+      }).then((response) => {
+        console.log(send_to_controller);
+      })
     }
 
     if (current_array.length === 5){
       full_game_array.push(current_array)
       current_array = []
     }
-    if ((current_array.join("").toLowerCase() !== word.toLowerCase()) && (full_game_array.length === 11)) {
+    if ((current_array.join("").toLowerCase() !== word.toLowerCase()) && (full_game_array.length === 6)) {
       alert_message_loss();
+       var send_to_controller = {"attempts": tries, "win": false, "score": -50}; 
+    
+    
+       fetch("/"  + "?attempts=" + tries + "&win=" + false + "&word=" + word + "&score=" + -50 , {
+        method: "post",
+        headers: {
+          'Content-Type': 'text/html'
+        },
+        data: {data: send_to_controller}
+      }).then((response) => {
+        console.log(send_to_controller);
+      })
     }
+    
     switch_rows();
     click = -1;
     click_arr = [];
@@ -2753,12 +2777,14 @@ function alert_message_win(){
   setTimeout(() => {
     alert("WINNER WINNER CHICKY DINNER!!!!")
   }, 1000);
+  console.log(full_game_array);
 }
 
 function alert_message_loss(){
   setTimeout(() => {
     alert("Maybe next time... The word was " + word)
   }, 1000);
+  console.log(full_game_array);
 }
 
 function removeLast(){

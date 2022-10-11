@@ -1,2 +1,63 @@
-<h1>Show User</h1>
-<h3><%=@user.name.capitalize%></h3>
+<%# <h1 style="color: white">Show User<%= @current_user.name %></h1> 
+<h1 style="color:white"><%= @user.name.capitalize %> </h1>
+
+
+
+<table>
+  <tr>
+    <th>Games Played</th>
+    <th>Total Score</th>
+    <th>Wins</th>
+    <th>Losses</th>
+  </tr>
+
+  <tr>
+  <% if @user.id === current_user.id %>
+  <th><%=current_user.user_games.length%></th>
+    <td><%= total_score(current_user.id) %></td>
+    <td><%= total_wins(current_user.id) %></td>
+     <td><%= total_losses(current_user.id) %></td>
+    
+    
+    
+    
+    
+    <td></td>
+    <td></td>
+
+   
+  <%end%>
+  </tr>
+</table>
+
+<table class="basic-table" >
+    <tr>
+      <th>Word</th>
+      <th>Attempts </th>
+      <th>Outcome</th>
+      <th>Date</th>
+      <th>Score</th>
+    
+      
+    
+      
+    </tr>
+    <% if @user.id == current_user.id %>
+      <% current_user.user_games.reverse.each do |game| %>
+
+      <tr>
+            <td><%=game.word%></td>
+            <td><%=game.attempts%></td>
+            <% if game.win == true %>
+              <td style="color:green">Won</td>
+            <%else %>
+              <td style="color:red" >Lost</td>
+            <%end%>
+            <td><%=game.created_at.strftime("%d/ %m/ %Y")%></td>
+           
+               <td><%= game.score %></td> 
+           
+        <%end%>
+      </tr>
+    <%end%>
+  </table>

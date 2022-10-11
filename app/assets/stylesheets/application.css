@@ -51,6 +51,9 @@
   .key {
     max-height: 55px;
   }
+  .users-index {
+    color: white;
+  }
   .title {
     margin: 0;
     padding: 0;
@@ -62,14 +65,36 @@
   }
  }
 
- /* DESKTOP */
- html {
 
+ /* DESKTOP */
+ h3  {
+   list-style-type: none;
+   color: white;
+   text-decoration: none;
+   font-size: 2rem;
+ }
+ *{
+   margin: 0;
+   padding: 0;
  }
  body {
    height: 100vh;
+   margin: 0 auto;
+   text-align: center;
+ }
+ .key-value-pair {
+   display: inline-block;
+   border: 1px solid grey;
+   width: 100%;
+   padding: 5%;
+   justify-content: space-evenly;
    
  }
+ .leader-board {
+
+   margin-left: 4%;
+ }
+
 
  .grid-container {
   display: grid;
@@ -108,6 +133,7 @@
   margin: 4px;
 
 }
+
 .found {
   background-color: #b59f3b !important;
   -webkit-transition: background 1.5s;
@@ -134,6 +160,8 @@ transition: background 1.5s;
 }
 
 
+
+
 body {
   background-color: #121214;
   max-width: 800px;
@@ -150,6 +178,47 @@ body {
   color: #121214;
 }
 
+/* nav */
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 10px;
+  height: 30px;
+  list-style-type: none;
+  margin-right: 20px;
+  flex-wrap: nowrap;
+}
+h4 {
+  color: white;
+}
+table {
+  color: white;
+  width: 85%;
+  margin: 0 auto;
+  max-height: 100vh;
+}
+.nav li a {
+  text-decoration: none;
+  color: #3a3a3b; 
+  border: 1px solid #3a3a3b;
+  height: 15px;
+  margin: 2px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 20px;
+}
+.nav li a:hover {
+  text-decoration: none;
+  color: white; 
+  border: 1px solid white;
+  height: 15px;
+  margin: 2px;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+
 
 
 /* KEYBOARD */
@@ -159,7 +228,7 @@ body {
   color: white;
   /* The text of the element and its sub-elements is not selectable
   user can only press the keyboard element */
-  user-select: none;
+  user-select: all;
 }
 
 .keyboard-row {
@@ -195,6 +264,9 @@ body {
   color: black;
   cursor: pointer;
 }
+.white {
+  color: white;
+}
 
 .keyboard-row button:last-of-type {
   margin: 0;
@@ -206,4 +278,12 @@ body {
 .keyboard-row .wide-button {
   flex-grow: 1.5;
   font-size: 12px;
+}
+
+
+
+
+/* login-out */
+.login {
+  color: white;
 }

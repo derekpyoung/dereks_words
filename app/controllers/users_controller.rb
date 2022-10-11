@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   def create 
     u = User.new(
       name: params[:name],
       email: params[:email],
-      password_digest: params[:password_digest]
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
     )
     u.save 
+    redirect_to "/users"  
   end 
 
   def index
@@ -34,6 +36,3 @@ end
 
 
 
-## need to make games controlelr and user_games controller. when you start a new gae hte 
-# users game controller to post request
-#game gets created on new game click grabs random word and goes. 

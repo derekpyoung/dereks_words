@@ -5,3 +5,27 @@ Content-Type: application/json
 {
   "word": "break"
 }
+
+###
+POST http://localhost:3000/login 
+Content-Type: text/html
+
+{
+  "email": "derek@email.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/users 
+Content-Type: text/html 
+
+{
+  "name": "butch",
+  "email": "butch@email.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+###
+POST http://localhost:3000/logout 
+Content-Type: application/javascript
