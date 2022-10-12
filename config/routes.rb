@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+root "application#home"
 get '/users', to: 'users#new'
 post '/users', to: 'users#create'
 get '/users/all', to: 'users#index'
