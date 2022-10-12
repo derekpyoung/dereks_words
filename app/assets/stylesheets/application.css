@@ -62,10 +62,16 @@
     grid-template-columns: repeat(5,1fr);
    
   }
+  .nav li a {
+    color: rgb(136, 133, 133) !important;
+  }
  }
 
 
  /* DESKTOP */
+ .users-index {
+  color: white;
+}
  h3  {
    list-style-type: none;
    color: white;
@@ -185,12 +191,13 @@ body {
 .nav {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   margin: 10px;
   height: 30px;
   list-style-type: none;
   margin-right: 20px;
   flex-wrap: nowrap;
+  color: rgb(175, 173, 173) !important;
 }
 h4 {
   color: white;
@@ -203,7 +210,8 @@ table {
 }
 .nav li a {
   text-decoration: none;
-  color: #3a3a3b; 
+  justify-content: flex-start;
+  color: #989898; 
   border: 1px solid #3a3a3b;
   height: 15px;
   margin: 2px;

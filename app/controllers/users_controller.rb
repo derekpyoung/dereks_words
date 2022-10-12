@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if u.save
-    redirect_to "/" 
+      redirect_to "/users/all"
     end  
   end 
 
