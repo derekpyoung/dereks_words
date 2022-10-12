@@ -65,6 +65,7 @@
   .nav li a {
     color: rgb(136, 133, 133) !important;
   }
+  
  }
 
 
@@ -72,6 +73,7 @@
  .users-index {
   color: white;
 }
+
  h3  {
    list-style-type: none;
    color: white;
@@ -297,14 +299,15 @@ table {
 
 /* login-out */
 .login {
+  display: block;
   color: white;
-  justify-content: center;
-  
-}
-.login-container {
-  display: flex;
   margin: 0 auto;
-  width: 50%;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+}
 
+.login-container {
+  display: block;
+  text-align: center;
 }

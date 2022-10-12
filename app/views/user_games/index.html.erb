@@ -2734,7 +2734,7 @@ function submit( ){
       var send_to_controller = {"attempts": tries, "win": true, "score": score}; 
     
     
-       fetch("/"  + "?attempts=" + tries + "&win=" + true + "&word=" + word + "&score=" + score, {
+       fetch("/game"  + "?attempts=" + tries + "&win=" + true + "&word=" + word + "&score=" + score, {
         method: "post",
         headers: {
           'Content-Type': 'text/html'
@@ -2754,7 +2754,7 @@ function submit( ){
        var send_to_controller = {"attempts": tries, "win": false, "score": -50}; 
     
     
-       fetch("/"  + "?attempts=" + tries + "&win=" + false + "&word=" + word + "&score=" + -50 , {
+       fetch("/game"  + "?attempts=" + tries + "&win=" + false + "&word=" + word + "&score=" + -50 , {
         method: "post",
         headers: {
           'Content-Type': 'text/html'
