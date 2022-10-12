@@ -105,6 +105,7 @@
  }
 
 
+
  .grid-container {
   display: grid;
   grid-template:  repeat(6, 1fr);
@@ -297,4 +298,13 @@ table {
 /* login-out */
 .login {
   color: white;
+  justify-content: center;
+  
+}
+.login-container {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  justify-content: center;
+
 }
