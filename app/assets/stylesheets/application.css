@@ -41,9 +41,8 @@
     min-width: 0;
     height: 20px;
     width: 20px;
-  
-   
   }
+
   .del_sub_key {
     background-color: rgb(203, 203, 203) !important ;
     color: black !important;
@@ -73,6 +72,10 @@
    text-decoration: none;
    font-size: 2rem;
  }
+ .del_sub_key {
+  background-color: rgb(203, 203, 203) !important ;
+  color: black !important;
+}
  *{
    margin: 0;
    padding: 0;
