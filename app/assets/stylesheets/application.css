@@ -26,9 +26,20 @@
     min-height: 0;
     min-width: 0;
     grid-gap: -1px;
+    padding: 10px;
     
-    
-    
+  }
+  #keyboard-container {
+    height: var(--keyboard-height);
+    margin: 0 8px;
+    color: white;
+    /* The text of the element and its sub-elements is not selectable
+    user can only press the keyboard element */
+    padding-right:10px;
+    user-select: all;
+  }
+  .name {
+    color: white !important;
   }
   .grid-item {
     background-color: #121214;
@@ -64,8 +75,16 @@
   }
   .nav li a {
     color: rgb(136, 133, 133) !important;
+    max-width: 30px;
   }
+ 
+ 
   
+ }
+ h2 {
+   color: rgb(225, 224, 224) !important;
+   font-size: xx-large;
+   font-weight:500;
  }
 
 
@@ -112,7 +131,10 @@
   display: grid;
   grid-template:  repeat(6, 1fr);
   background-color: #121214;
-  padding: 10px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   box-sizing: border-box;
   gap: -5px;
   min-height: 0;
@@ -148,27 +170,30 @@
 
 .found {
   background-color: #b59f3b !important;
-  -webkit-transition: background 1.5s;
--moz-transition: background 1.5s;
--ms-transition: background 1.5s;
--o-transition: background 1.5s;
-transition: background 1.5s;
+  border: 1px solid #b59f3b !important;
+  -webkit-transition: background 1s;
+-moz-transition: background 1s;
+-ms-transition: background 1s;
+-o-transition: background 1s;
+transition: background 1s;
 }
 .correct {
   background-color: #538d4e !important;
-  -webkit-transition: background 1.5s;
--moz-transition: background 1.5s;
--ms-transition: background 1.5s;
--o-transition: background 1.5s;
-transition: background 1.5s;
+  border: 1px solid #538d4e !important;
+  -webkit-transition: background 1s;
+-moz-transition: background 1s;
+-ms-transition: background 1s;
+-o-transition: background 1s;
+transition: background 1s;
 }
 .not_found {
   background-color: #3a3a3b !important ;
-  -webkit-transition: background 1.5s;
--moz-transition: background 1.5s;
--ms-transition: background 1.5s;
--o-transition: background 1.5s;
-transition: background 1.5s;
+  border: 1px solid #3a3a3b !important;
+  -webkit-transition: background 1s;
+-moz-transition: background 1s;
+-ms-transition: background 1s;
+-o-transition: background 1s;
+transition: background 1s;
 }
 
 
@@ -196,7 +221,6 @@ body {
   width: 100%;
   justify-content: space-evenly;
   margin: 10px;
-  height: 30px;
   list-style-type: none;
   margin-right: 20px;
   flex-wrap: nowrap;
@@ -219,7 +243,7 @@ table {
   height: 15px;
   margin: 2px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 3px;
   margin-right: 20px;
 }
 .nav li a:hover {
