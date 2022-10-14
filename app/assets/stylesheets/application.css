@@ -121,14 +121,17 @@
    
  }
  .border-colors {
-   margin-top: 50px;
+  margin-top: 50px;
+  width: 92vw;
   border: 10px solid;
   padding: 10px;
+  position: absolute;
   height: 60vh;
   padding-block-start: 10px;
   border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
   border-image-slice: 10 ;
   transition: .5s;
+
  }
  .border-colors:hover {
   border: 10px solid;
