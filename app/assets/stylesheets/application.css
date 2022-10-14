@@ -123,6 +123,7 @@
  .border-colors {
   margin-top: 50px;
   width: 92vw;
+  max-width: 90%;
   border: 10px solid;
   padding: 10px;
   position: absolute;
