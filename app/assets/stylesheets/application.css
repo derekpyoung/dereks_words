@@ -93,6 +93,7 @@
   color: white;
 }
 
+
  h3  {
    list-style-type: none;
    color: white;
@@ -114,15 +115,55 @@
  }
  .key-value-pair {
    display: inline-block;
-   border: 1px solid grey;
    width: 100%;
-   padding: 5%;
-   justify-content: space-evenly;
+   padding: 15px;
+
    
  }
- .leader-board {
+ .border-colors {
+   margin-top: 50px;
+  border: 10px solid;
+  padding: 10px;
+  height: 60vh;
+  padding-block-start: 10px;
+  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
+  border-image-slice: 10 ;
+  transition: .5s;
+ }
+ .border-colors:hover {
+  border: 10px solid;
+  padding: 10px;
+  height: 60vh;
+  padding-block-start: 10px;
+  border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e, #3a3a3b);
+  border-image-slice: 10;
+  transition: .5s;
+ }
 
-   margin-left: 4%;
+ .leader-board {
+  font-size: large;
+  margin-top: 50px;
+  border: 10px solid;
+  /* margin-left: 4%; */
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-block-start: 10px;
+  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
+  border-image-slice: 10 ;
+  transition: .5s;
+ }
+
+ .leader-board:hover {
+   font-size: large;
+  border: 10px solid;
+  /* margin-left: 4%; */
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-block-start: 10px;
+  border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e,#3a3a3b );
+  border-image-slice: 10 ;
+  transition: .5s;
  }
 
 
@@ -255,7 +296,38 @@ table {
   padding: 5px;
   margin-right: 20px;
 }
+.home-p {
+  margin: 15px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
 
+.border-colors a {
+  padding: 10px;
+  margin: 20px;
+  color:#538d4e;
+  text-decoration: none;
+  font-size: large;
+  padding: 10px;
+  margin: 20px;
+
+}
+.border-colors a:hover {
+  color:#56ac4e;
+}
+.signup-btn {
+  padding: 10px;
+  margin: 20px;
+}
+
+.login-btn {
+  padding: 10px;
+  margin: 20px;
+}
+.white-words {
+  margin-top: 25px;;
+}
 
 
 
@@ -264,8 +336,6 @@ table {
   height: var(--keyboard-height);
   margin: 0 8px;
   color: white;
-  /* The text of the element and its sub-elements is not selectable
-  user can only press the keyboard element */
   user-select: all;
 }
 
