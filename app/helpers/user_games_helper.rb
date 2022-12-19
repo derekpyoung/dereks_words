@@ -29,28 +29,9 @@ module UserGamesHelper
       i += 1
     end 
     p final_hash 
-    # p player_score_array
-    
-
-    
-      
-   
-
-    # arr = []
-    # @h = Hash.new(0)
-    # users_hash = Hash.new(0)
-    # user = User.find_by(id: id)
-    # p "----------"
-    # games = user.user_games
-    # games.each do |game|
-    #   arr.push(game.score)
-    # end 
-    # @h[user.id] = arr.sum
   end
 
   def sort_scores 
-    p "shit fuck shit"
-    p @h 
 
 
   end 
