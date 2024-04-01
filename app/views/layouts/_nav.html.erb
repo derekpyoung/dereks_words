@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<%# <html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -12,18 +12,18 @@
  <ul class="nav">
     <% if current_user %>
       
-      <li><a href="/game" >Play</a></li>
-      <li><a href= <%= "/users/#{current_user.id}"%>> Profile </a></li>
-      <li><a href="/users/all">LeaderBoard</a></li>
+      <%# <li><a href="/game" >Play</a></li> %>
+      <%# <li><a href= <%= "/users/#{current_user.id}" Profile </a></li>  %>
+      <%# <li><a href="/users/all">LeaderBoard</a></li> %>
       
-      <li><a href="/logout">Logout</a></li>
-    <% else %>
-      <li> <a href="/users">Sign up</a> </li>
-      <li> <a href="/login">Login</a></li>
-    <% end %>
+      <%# <li><a href="/logout">Logout</a></li> %>
+    <%# % else %> 
+      <%# <li> <a href="/users">Sign up</a> </li> %>
+      <%# <li> <a href="/login">Login</a></li> %>
+    <%# <% end %> 
 
-  </ul>
+  <%# </ul> %>
 
-</body>
+<%# </body> %> 
 
 </html>

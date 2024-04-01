@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WORDS</title>
-  <h2 class="name-title title"><%= current_user.name.capitalize %>'s Wordle</h2>
+  <h2 class="name-title title">Welcome to Dereks Wordle clone!</h2>
 
 </head>
 
@@ -98,8 +98,7 @@
   </div>
   <br>
   <br>
-  <br>
-  <br>
+    <a href="/" class="mybutton" role="button">Play Again!</a>
   <br>
   <br>
   <br>
@@ -2619,7 +2618,7 @@ var game_words = [
 var min = 0;
 var max = 2500;
 var random = Math.floor(Math.random() * (max - min) + min) 
-var word_lower = "earth"//game_words[random];
+var word_lower = game_words[random];
 var word = word_lower.toUpperCase();
 var current_array = []
 var click_arr = []
@@ -2723,7 +2722,7 @@ function submit( ){
   console.log(word);
   let tries = full_game_array.length + 1
 
-  if(check_url(current_array)){
+  if(check_url()){
     change_color();
     change_keyboard(current_array);
 

@@ -1,10 +1,18 @@
+/* GRID */
 
- /* GRID */
- @media only screen and (max-width: 600px) {
+.mybutton {
+  color: green !important;
+  background-color: #cccccc;
+  border-color: #cccccc;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-   .grid-container {
+@media only screen and (max-width: 600px) {
+
+  .grid-container {
     display: grid;
-    grid-template:  repeat(6, 1fr);
+    grid-template: repeat(6, 1fr);
     background-color: #121214;
     justify-content: center;
     box-sizing: border-box;
@@ -12,20 +20,25 @@
     min-width: 0;
     grid-gap: -1px;
     padding: 10px;
-    
+
   }
+
+
+
   #keyboard-container {
     height: var(--keyboard-height);
     margin: 0 8px;
     color: white;
     /* The text of the element and its sub-elements is not selectable
     user can only press the keyboard element */
-    padding-right:10px;
+    padding-right: 10px;
     user-select: all;
   }
+
   .name {
     color: white !important;
   }
+
   .grid-item {
     background-color: #121214;
     color: white;
@@ -40,28 +53,39 @@
   }
 
   .del_sub_key {
-    background-color: rgb(203, 203, 203) !important ;
+    background-color: rgb(203, 203, 203) !important;
     color: black !important;
   }
+
   .key {
     max-height: 55px;
   }
+
   .users-index {
     color: white;
   }
+
   .title {
     margin: 0;
     padding: 0;
   }
-  .word-one, .word-two, .word-three, .word-four, .word-five, .word-six{
+
+  .word-one,
+  .word-two,
+  .word-three,
+  .word-four,
+  .word-five,
+  .word-six {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-   
+    grid-template-columns: repeat(5, 1fr);
+
   }
+
   .nav li a {
     color: rgb(136, 133, 133) !important;
     max-width: 30px;
   }
+
   .border-colors {
     margin-top: 50px;
     width: 92vw;
@@ -71,12 +95,13 @@
     position: absolute;
     height: 60vh;
     padding-block-start: 10px;
-    border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
-    border-image-slice: 10 ;
+    border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e);
+    border-image-slice: 10;
     transition: .5s;
-  
-   }
-   .border-colors:hover {
+
+  }
+
+  .border-colors:hover {
     border: 10px solid;
     padding: 10px;
     height: 60vh;
@@ -84,64 +109,66 @@
     border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e, #3a3a3b);
     border-image-slice: 10;
     transition: .5s;
-   }
- 
- 
-  
- }
- h2 {
-   color: rgb(225, 224, 224) !important;
-   font-size: xx-large;
-   font-weight:500;
- }
+  }
 
 
- /* DESKTOP */
- .users-index {
+
+}
+
+h2 {
+  color: rgb(225, 224, 224) !important;
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+
+/* DESKTOP */
+.users-index {
   color: white;
 }
 
 
- h3  {
-   list-style-type: none;
-   color: white;
-   text-decoration: none;
-   font-size: 2rem;
- }
- .del_sub_key {
-  background-color: rgb(203, 203, 203) !important ;
+h3 {
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.del_sub_key {
+  background-color: rgb(203, 203, 203) !important;
   color: black !important;
 }
 
- *{
-   margin: 0;
-   padding: 0;
- }
+* {
+  margin: 0;
+  padding: 0;
+}
 
- body {
-   height: 100vh;
-   margin: 0 auto;
-   text-align: center;
- }
+body {
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
 
- .key-value-pair {
-   display: inline-block;
-   width: 100%;
-   padding: 15px;
- }
+.key-value-pair {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+}
 
- .border-colors {
+.border-colors {
   margin-top: 50px;
   border: 10px solid;
   padding: 10px;
   height: 60vh;
   padding-block-start: 10px;
-  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
-  border-image-slice: 10 ;
+  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e);
+  border-image-slice: 10;
   transition: .5s;
- }
+}
 
- .border-colors:hover {
+.border-colors:hover {
   border: 10px solid;
   padding: 10px;
   height: 60vh;
@@ -149,9 +176,9 @@
   border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e, #3a3a3b);
   border-image-slice: 10;
   transition: .5s;
- }
+}
 
- .leader-board {
+.leader-board {
   font-size: large;
   margin-top: 50px;
   border: 10px solid;
@@ -159,29 +186,29 @@
   margin-bottom: 10px;
   padding: 10px;
   padding-block-start: 10px;
-  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e );
-  border-image-slice: 10 ;
+  border-image-source: linear-gradient(45deg, #538d4e, #3a3a3b, #538d4e);
+  border-image-slice: 10;
   transition: .5s;
- }
+}
 
- .leader-board:hover {
-   font-size: large;
+.leader-board:hover {
+  font-size: large;
   border: 10px solid;
   /* margin-left: 4%; */
   margin-top: 50px;
   margin-bottom: 10px;
   padding: 10px;
   padding-block-start: 10px;
-  border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e,#3a3a3b );
-  border-image-slice: 10 ;
+  border-image-source: linear-gradient(45deg, #3a3a3b, #538d4e, #3a3a3b);
+  border-image-slice: 10;
   transition: .5s;
- }
+}
 
 
 
- .grid-container {
+.grid-container {
   display: grid;
-  grid-template:  repeat(6, 1fr);
+  grid-template: repeat(6, 1fr);
   background-color: #121214;
   padding-top: 0px;
   padding-bottom: 10px;
@@ -191,8 +218,9 @@
   gap: -5px;
   min-height: 0;
   min-width: 0;
-  
+
 }
+
 .grid-item {
   background-color: #121214;
   color: white;
@@ -206,14 +234,20 @@
   min-width: 0;
   height: 42px;
   width: 43px;
- 
+
 }
-.word-one, .word-two, .word-three, .word-four, .word-five, .word-six{
+
+.word-one,
+.word-two,
+.word-three,
+.word-four,
+.word-five,
+.word-six {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 5px;
   row-gap: 5px;
   margin: 4px;
@@ -224,28 +258,30 @@
   background-color: #b59f3b !important;
   border: 2px solid #b59f3b !important;
   -webkit-transition: background 1s;
--moz-transition: background 1s;
--ms-transition: background 1s;
--o-transition: background 1s;
-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
 }
+
 .correct {
   background-color: #538d4e !important;
   border: 2px solid #538d4e !important;
   -webkit-transition: background 1s;
--moz-transition: background 1s;
--ms-transition: background 1s;
--o-transition: background 1s;
-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
 }
+
 .not_found {
-  background-color: #3a3a3b !important ;
+  background-color: #3a3a3b !important;
   border: 2px solid #3a3a3b !important;
   -webkit-transition: background 1s;
--moz-transition: background 1s;
--ms-transition: background 1s;
--o-transition: background 1s;
-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
 }
 
 
@@ -257,12 +293,14 @@ body {
   display: block;
   margin: auto;
 }
+
 .title {
   color: white;
   margin: 0;
   padding: 0;
   text-align: center;
 }
+
 .hidden {
   color: #121214;
 }
@@ -278,19 +316,22 @@ body {
   flex-wrap: nowrap;
   color: rgb(175, 173, 173) !important;
 }
+
 h4 {
   color: white;
 }
+
 table {
   color: white;
   width: 85%;
   margin: 0 auto;
   max-height: 100vh;
 }
+
 .nav li a {
   text-decoration: none;
   justify-content: flex-start;
-  color: #989898; 
+  color: #989898;
   border: 1px solid #3a3a3b;
   height: 15px;
   margin: 2px;
@@ -298,15 +339,17 @@ table {
   padding: 3px;
   margin-right: 20px;
 }
+
 .nav li a:hover {
   text-decoration: none;
-  color: white; 
+  color: white;
   border: 1px solid white;
   height: 15px;
   margin: 2px;
   padding: 5px;
   margin-right: 20px;
 }
+
 .home-p {
   margin: 15px;
   width: 80%;
@@ -317,16 +360,18 @@ table {
 .border-colors a {
   padding: 10px;
   margin: 20px;
-  color:#538d4e;
+  color: #538d4e;
   text-decoration: none;
   font-size: large;
   padding: 10px;
   margin: 20px;
 
 }
+
 .border-colors a:hover {
-  color:#56ac4e;
+  color: #56ac4e;
 }
+
 .signup-btn {
   padding: 10px;
   margin: 20px;
@@ -336,8 +381,10 @@ table {
   padding: 10px;
   margin: 20px;
 }
+
 .white-words {
-  margin-top: 25px;;
+  margin-top: 25px;
+  ;
 }
 
 
@@ -378,11 +425,13 @@ table {
   text-align: center;
   box-sizing: border-box;
 }
+
 .keyboard-row button:hover {
   background-color: grey;
   color: black;
   cursor: pointer;
 }
+
 .white {
   color: white;
 }
@@ -394,6 +443,7 @@ table {
 .keyboard-row .spacer-half {
   flex-grow: 0.5;
 }
+
 .keyboard-row .wide-button {
   flex-grow: 1.5;
   font-size: 12px;

@@ -1,6 +1,6 @@
 class UserGamesController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   def index
     @u = UserGame.all
   end 
@@ -9,7 +9,7 @@ class UserGamesController < ApplicationController
     u = UserGame.new(
       attempts: params[:attempts].to_i,
       win: params[:win],
-      user_id: current_user.id,
+      # user_id: current_user.id,
       word: params[:word],
       score: params[:score]
     )

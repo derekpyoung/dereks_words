@@ -1,4 +1,4 @@
-
+<%# 
 <div>
 <h1 class="white">Log In</h1>
 </div>
@@ -9,20 +9,20 @@
 <div class="center">
   <div class="login-container">
     <%= form_tag '/login' , method: :post do %>
-      <div class="login center">
-        <%= label_tag :email %> :&nbsp;
-          <%= text_field_tag :email%>
-      </div>
-      <br>
-      <div class="login center">
-        <%= label_tag :password %> :&nbsp;
-          <%= password_field_tag :password %>
-      </div>
-      <br>
-      <br>
-      <button class="btn center login-btn" type="submit"> Submit </button>
-      <br>
-  </div>
+      <%# <div class="login center"> %>
+        <%# <%= label_tag :email %>
+          <%# <%= text_field_tag :email%> 
+      <%# </div> %>
+      <%# <br> %>
+      <%# <div class="login center"> %>
+        <%# <%= label_tag :password %> 
+          <%# <%= password_field_tag :password %> 
+      <%# </div> %>
+      <%# <br> %>
+      <%# <br> %>
+      <%# <button class="btn center login-btn" type="submit"> Submit </button> %>
+      <%# <br> %>
+  <%# </div> %>
 
 
-  <%end%>
+  <%# <%end%> 
